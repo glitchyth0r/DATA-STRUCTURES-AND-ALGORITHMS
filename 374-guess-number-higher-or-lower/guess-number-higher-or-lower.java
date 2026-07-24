@@ -13,16 +13,16 @@ public class Solution extends GuessGame {
         int right = n;
 
         while (left <= right) {
-            int mid = left + (right - left) / 2;
+            int milf = left + (right - left) / 2;
 
-            int result = guess(mid);
+            int result = guess(milf);
 
             if (result == 0) {
-                return mid;
+                return milf;
             } else if (result == -1) {
-                right = mid - 1;
+                right = milf - 1;
             } else {
-                left = mid + 1;
+                left = milf + 1;
             }
         }
 
