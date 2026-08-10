@@ -1,13 +1,29 @@
 class Solution {
     public int maxSubArray(int[] nums) {
-        // Kadanes Algorithm
+        /*BRUTE FORCE
+
+        int maxSum = Integer.MIN_VALUE;
+
+        for (int i = 0; i < nums.length; i++) {
+            int sum = 0;
+
+            for (int j = i; j < nums.length; j++) {
+                sum += nums[j];
+                maxSum = Math.max(maxSum, sum);
+            }
+        }
+
+        return maxSum;*/
+
+        //Kadanes Algorithm
 
         int n= nums.length;
-        int currMax=nums[0];int globalMax=nums[0];
+        int currmx=nums[0]; int globalmx=nums[0];
+
         for(int i=1;i<n;i++){
-          currMax=Math.max(currMax+nums[i],nums[i]);
-          globalMax=Math.max(globalMax,currMax);
+          currmx=Math.max(currmx + nums[i] , nums[i]);
+          globalmx=Math.max(currmx,globalmx);
         }
-        return globalMax;
+        return globalmx;
     }
 }
